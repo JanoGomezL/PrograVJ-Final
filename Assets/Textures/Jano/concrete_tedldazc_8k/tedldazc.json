@@ -1,0 +1,268 @@
+{
+  "assetCategories": {
+    "imperfection": {
+      "other": {}
+    }
+  },
+  "averageColor": "#808080",
+  "categories": [
+    "surface",
+    "Imperfections",
+    "Concrete"
+  ],
+  "comp_version": 1,
+  "description": "",
+  "environment": {
+    "biome": "undefined",
+    "region": "undefined"
+  },
+  "highest_available_res": 8192,
+  "id": "tedldazc",
+  "json": {
+    "contentLength": 5687,
+    "uri": "tedldazc.json"
+  },
+  "maps": [
+    {
+      "averageColor": "#757575",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 107827475,
+      "maxIntensity": 167,
+      "mimeType": "image/x-exr",
+      "minIntensity": 26,
+      "name": "Gloss",
+      "physicalSize": "1x1",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "tedldazc_8K_Gloss.exr"
+    },
+    {
+      "averageColor": "#757575",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 23535124,
+      "maxIntensity": 167,
+      "mimeType": "image/jpeg",
+      "minIntensity": 26,
+      "name": "Gloss",
+      "physicalSize": "1x1",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "tedldazc_8K_Gloss.jpg"
+    },
+    {
+      "averageColor": "#8A8A8A",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 96589828,
+      "maxIntensity": 229,
+      "mimeType": "image/x-exr",
+      "minIntensity": 88,
+      "name": "Roughness",
+      "physicalSize": "1x1",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "tedldazc_8K_Roughness.exr"
+    },
+    {
+      "averageColor": "#8A8A8A",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 23441261,
+      "maxIntensity": 229,
+      "mimeType": "image/jpeg",
+      "minIntensity": 88,
+      "name": "Roughness",
+      "physicalSize": "1x1",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "tedldazc_8K_Roughness.jpg"
+    }
+  ],
+  "meta": [
+    {
+      "key": "scanArea",
+      "name": "Scan Area",
+      "value": "1x1 m"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "value": "20 m"
+    },
+    {
+      "key": "tileable",
+      "name": "Tileable",
+      "value": true
+    },
+    {
+      "key": "texelDensity",
+      "name": "Texel Density",
+      "value": "8192 px/m"
+    },
+    {
+      "key": "calibration",
+      "name": "Calibration",
+      "value": "GretagMacbeth ColorChecker Color Rendition Chart"
+    },
+    {
+      "key": "scanner",
+      "name": "Scanner",
+      "value": "MKX"
+    }
+  ],
+  "models": [],
+  "name": "Concrete",
+  "pack": null,
+  "physicalSize": null,
+  "points": 1,
+  "previews": {
+    "images": [
+      {
+        "contentLength": 145637,
+        "resolution": "360x360",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "tedldazc_Grid_360.png"
+      },
+      {
+        "contentLength": 196682,
+        "resolution": "420x420",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "tedldazc_Grid_420.png"
+      },
+      {
+        "contentLength": 564859,
+        "resolution": "720x720",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "tedldazc_Grid_720.png"
+      },
+      {
+        "contentLength": 770719,
+        "resolution": "840x840",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "tedldazc_Grid_840.png"
+      },
+      {
+        "contentLength": 1515595,
+        "resolution": "1440x768",
+        "tags": [
+          "preview"
+        ],
+        "uri": "tedldazc_Popup_1440.png"
+      },
+      {
+        "contentLength": 2828836,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview"
+        ],
+        "uri": "tedldazc_Popup_1920.png"
+      },
+      {
+        "contentLength": 5915696,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "tedldazc_Popup_2880.png"
+      },
+      {
+        "contentLength": 11279309,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "tedldazc_Popup_3840.png"
+      }
+    ],
+    "relativeSize": "1x1",
+    "scaleReferences": []
+  },
+  "process_date": "2024-04-17 10:44:58",
+  "properties": [],
+  "referencePreviews": {
+    "maps": [],
+    "models": []
+  },
+  "references": [],
+  "revised": false,
+  "semanticTags": {
+    "3d_mesh": [],
+    "architectural_style": {},
+    "asset_type": "imperfection",
+    "contains": [
+      "concrete"
+    ],
+    "industry": [
+      "archviz",
+      "games",
+      "VFX"
+    ],
+    "latin_name": [],
+    "locations": {
+      "Global": {
+        "Global": {}
+      }
+    },
+    "maxSize": 1,
+    "minSize": 1,
+    "name": "Concrete",
+    "resolution": 8192,
+    "season": [],
+    "subject_matter": "manmade"
+  },
+  "tags": [
+    "surface imperfection",
+    "archviz"
+  ],
+  "texelDensity": 8192,
+  "texture_type": "basic",
+  "ue_plugin_archives": [
+    {
+      "contentLength": 51906946,
+      "gltfVersion": "2.0",
+      "tier": 0,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_0/tedldazc_tier_0.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 16584066,
+      "gltfVersion": "2.0",
+      "tier": 1,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_1/tedldazc_tier_1.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 4694370,
+      "gltfVersion": "2.0",
+      "tier": 2,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_2/tedldazc_tier_2.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 1503925,
+      "gltfVersion": "2.0",
+      "tier": 3,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_3/tedldazc_tier_3.zip",
+      "version": 1
+    }
+  ],
+  "version": 2
+}
