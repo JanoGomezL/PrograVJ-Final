@@ -15,7 +15,7 @@ public class EnemyDetection : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, player.position);
-        Debug.Log($"[EnemyDetection] Distancia al jugador: {distance}. Rango de detección: {detectionRange}");
+        /*Debug.Log($"[EnemyDetection] Distancia al jugador: {distance}. Rango de detección: {detectionRange}");*/
         return distance <= detectionRange;
     }
 

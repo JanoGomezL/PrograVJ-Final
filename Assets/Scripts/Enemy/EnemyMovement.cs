@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) < 1f)
         {
-            Debug.Log($"[EnemyMovement] Cambiando al siguiente waypoint: {currentWaypoint}");
+            /*Debug.Log($"[EnemyMovement] Cambiando al siguiente waypoint: {currentWaypoint}");*/
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
         }
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed * Time.deltaTime);
