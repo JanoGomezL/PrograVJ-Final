@@ -9879,6 +9879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc420d7626d754bd9a541d723fc9b27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSounds:
+  - {fileID: 8300000, guid: 8a2b5122982b1f2498a1562633ee1ed7, type: 3}
+  - {fileID: 8300000, guid: 7086d173584d0ad48965081989c0e351, type: 3}
+  - {fileID: 8300000, guid: d0d9674a01761a84da50fdb6ab1356bd, type: 3}
+  - {fileID: 8300000, guid: cf2ea0c8e1d2579428bd68ff3998b8c4, type: 3}
 --- !u!114 &1301198841
 MonoBehaviour:
   m_ObjectHideFlags: 0
