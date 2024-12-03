@@ -55,18 +55,20 @@ public class WeaponPickup : MonoBehaviour
         if (newWeapon != null)
         {
             player.EquipWeapon(newWeapon);
-
+            messageText.text = "";
             // Desactiva la física del arma
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
+
             }
 
             // Desactivar el collider del arma
             Collider weaponCollider = GetComponent<Collider>();
             if (weaponCollider != null)
             {
+
                 weaponCollider.enabled = false;
             }
 

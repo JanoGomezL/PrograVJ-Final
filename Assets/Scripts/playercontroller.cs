@@ -1,8 +1,10 @@
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    
     [Header("Movimiento del Jugador")]
     public float walkSpeed = 5f;          // Velocidad normal
     public float runSpeed = 10f;         // Velocidad al correr (Shift)
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
     private float xRotation = 0f;        // Rotación acumulada en el eje X (vertical)
-
+    public TextMeshProUGUI messageText;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             // Equipar la pistola inicial
             EquipWeapon(pistol);
+            messageText.text = "";
         }
         else
         {
@@ -114,42 +117,60 @@ public class PlayerController : MonoBehaviour
     }
 
     public void EquipWeapon(Weapon newWeapon)
+{
+    if (newWeapon != null)
     {
-        if (newWeapon != null)
+        // Actualizar el arma actual
+        currentWeapon = newWeapon;
+        Debug.Log("Arma equipada: " + currentWeapon.weaponName);
+
+        // Desactivar todos los colliders del arma equipada
+        Collider[] weaponColliders = newWeapon.GetComponents<Collider>();
+        if (weaponColliders.Length > 0)
         {
-            // Actualizar el arma actual
-            currentWeapon = newWeapon;
-            Debug.Log("Arma equipada: " + currentWeapon.weaponName);
-
-            // Desactivar el collider del arma equipada
-            Collider weaponCollider = newWeapon.GetComponent<Collider>();
-            if (weaponCollider != null)
+            foreach (Collider collider in weaponColliders)
             {
-                weaponCollider.enabled = false;
-                Debug.Log("Collider del arma desactivado.");
+                collider.enabled = false;
             }
-
-            // Mover el arma al WeaponHoldPoint
-            if (weaponHoldPoint != null)
-            {
-                // Asignar el WeaponHoldPoint como padre
-                newWeapon.transform.SetParent(weaponHoldPoint);
-
-                // Usar la posición, rotación y escala exacta del WeaponHoldPoint
-                newWeapon.transform.localPosition = Vector3.zero;
-                newWeapon.transform.localRotation = Quaternion.identity;
-                newWeapon.transform.localScale = Vector3.one;
-
-                Debug.Log("Arma colocada correctamente en el WeaponHoldPoint.");
-            }
-            else
-            {
-                Debug.LogError("WeaponHoldPoint no asignado en el Inspector.");
-            }
+            Debug.Log($"Se desactivaron {weaponColliders.Length} colliders del arma.");
         }
         else
         {
-            Debug.LogError("El arma proporcionada es nula.");
+            Debug.LogWarning("No se encontraron colliders para el arma equipada.");
+        }
+
+        // Mover el arma al WeaponHoldPoint
+        if (weaponHoldPoint != null)
+        {
+            // Asignar el WeaponHoldPoint como padre
+            newWeapon.transform.SetParent(weaponHoldPoint);
+
+            // Usar la posición, rotación y escala exacta del WeaponHoldPoint
+            newWeapon.transform.localPosition = Vector3.zero;
+            newWeapon.transform.localRotation = Quaternion.identity;
+            newWeapon.transform.localScale = Vector3.one;
+
+            Debug.Log("Arma colocada correctamente en el WeaponHoldPoint.");
+        }
+        else
+        {
+            Debug.LogError("WeaponHoldPoint no asignado en el Inspector.");
+        }
+
+        // Actualizar el mensaje en pantalla
+        if (messageText != null)
+        {
+            messageText.text = $"Arma equipada: {currentWeapon.weaponName}";
         }
     }
+    else
+    {
+        Debug.LogError("El arma proporcionada es nula.");
+        if (messageText != null)
+        {
+            messageText.text = "No se pudo equipar el arma.";
+        }
+    }
+}
+
 }
