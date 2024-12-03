@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
-    public void EquipWeapon(Weapon newWeapon)
+public void EquipWeapon(Weapon newWeapon)
 {
     if (newWeapon != null)
     {
@@ -137,6 +137,18 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.LogWarning("No se encontraron colliders para el arma equipada.");
+        }
+
+        // Eliminar el Rigidbody del arma equipada
+        Rigidbody weaponRigidbody = newWeapon.GetComponent<Rigidbody>();
+        if (weaponRigidbody != null)
+        {
+            Destroy(weaponRigidbody);
+            Debug.Log("Rigidbody eliminado del arma equipada.");
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró un Rigidbody en el arma equipada.");
         }
 
         // Mover el arma al WeaponHoldPoint
@@ -172,5 +184,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
 
 }
