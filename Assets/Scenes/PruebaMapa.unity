@@ -12762,6 +12762,7 @@ GameObject:
   - component: {fileID: 1610733359}
   - component: {fileID: 1610733358}
   - component: {fileID: 1610733357}
+  - component: {fileID: 1610733362}
   - component: {fileID: 1610733356}
   - component: {fileID: 1610733361}
   - component: {fileID: 1610733360}
@@ -12912,6 +12913,22 @@ MonoBehaviour:
   weaponHoldPoint: {fileID: 521296067}
   currentWeapon: {fileID: 1849887311}
   messageText: {fileID: 165584441}
+--- !u!114 &1610733362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610733355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dee8ffda64d774e9bc6ce23b317214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  healthText: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!65 &1613680522
 BoxCollider:
   m_ObjectHideFlags: 0
