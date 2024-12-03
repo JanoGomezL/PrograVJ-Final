@@ -4,7 +4,6 @@ using TMPro;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    
     [Header("Movimiento del Jugador")]
     public float walkSpeed = 5f;          // Velocidad normal
     public float runSpeed = 10f;         // Velocidad al correr (Shift)
@@ -21,12 +20,15 @@ public class PlayerController : MonoBehaviour
     [Header("Armas")]
     public Transform weaponHoldPoint;    // WeaponHoldPoint asignado desde el Inspector
     public Weapon currentWeapon;         // Arma actualmente equipada
+    private Weapon weaponInRange;        // Arma en rango para recoger
+
+    public TextMeshProUGUI messageText;  // Mensaje en pantalla
 
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
     private float xRotation = 0f;        // Rotación acumulada en el eje X (vertical)
-    public TextMeshProUGUI messageText;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -37,7 +39,6 @@ public class PlayerController : MonoBehaviour
         Pistol pistol = FindObjectOfType<Pistol>();
         if (pistol != null)
         {
-            // Equipar la pistola inicial
             EquipWeapon(pistol);
             messageText.text = "";
         }
@@ -58,6 +59,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && currentWeapon != null)
         {
             currentWeapon.Reload();
+        }
+
+        // Recoger arma
+        if (Input.GetKeyDown(KeyCode.E) && weaponInRange != null)
+        {
+            EquipWeapon(weaponInRange);
         }
 
         // Movimiento y salto
@@ -111,7 +118,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-
     private void RotateCamera()
     {
         // Obtén el movimiento del mouse
@@ -129,74 +135,70 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
-public void EquipWeapon(Weapon newWeapon)
-{
-    if (newWeapon != null)
+    public void EquipWeapon(Weapon newWeapon)
     {
-        // Actualizar el arma actual
-        currentWeapon = newWeapon;
-        Debug.Log("Arma equipada: " + currentWeapon.weaponName);
-
-        // Desactivar todos los colliders del arma equipada
-        Collider[] weaponColliders = newWeapon.GetComponents<Collider>();
-        if (weaponColliders.Length > 0)
+        if (newWeapon != null)
         {
+            // Si ya hay un arma equipada, devolverla al suelo
+            if (currentWeapon != null)
+            {
+                currentWeapon.transform.SetParent(null);
+                currentWeapon.gameObject.AddComponent<Rigidbody>(); // Agregar Rigidbody para caer al suelo
+                currentWeapon.GetComponent<Collider>().enabled = true; // Reactivar el collider
+                currentWeapon = null;
+            }
+
+            // Equipar la nueva arma
+            currentWeapon = newWeapon;
+            Collider[] weaponColliders = newWeapon.GetComponents<Collider>();
             foreach (Collider collider in weaponColliders)
             {
-                collider.enabled = false;
+                collider.enabled = false; // Desactivar colliders
             }
-            Debug.Log($"Se desactivaron {weaponColliders.Length} colliders del arma.");
-        }
-        else
-        {
-            Debug.LogWarning("No se encontraron colliders para el arma equipada.");
-        }
-
-        // Eliminar el Rigidbody del arma equipada
-        Rigidbody weaponRigidbody = newWeapon.GetComponent<Rigidbody>();
-        if (weaponRigidbody != null)
-        {
-            Destroy(weaponRigidbody);
-            Debug.Log("Rigidbody eliminado del arma equipada.");
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró un Rigidbody en el arma equipada.");
-        }
-
-        // Mover el arma al WeaponHoldPoint
-        if (weaponHoldPoint != null)
-        {
-            // Asignar el WeaponHoldPoint como padre
+            Rigidbody weaponRigidbody = newWeapon.GetComponent<Rigidbody>();
+            if (weaponRigidbody != null)
+            {
+                Destroy(weaponRigidbody); // Eliminar Rigidbody
+            }
             newWeapon.transform.SetParent(weaponHoldPoint);
-
-            // Usar la posición, rotación y escala exacta del WeaponHoldPoint
             newWeapon.transform.localPosition = Vector3.zero;
             newWeapon.transform.localRotation = Quaternion.identity;
             newWeapon.transform.localScale = Vector3.one;
 
-            Debug.Log("Arma colocada correctamente en el WeaponHoldPoint.");
-        }
-        else
-        {
-            Debug.LogError("WeaponHoldPoint no asignado en el Inspector.");
-        }
+            if (messageText != null)
+            {
+                messageText.text = $"Arma equipada: {currentWeapon.weaponName}";
+            }
 
-        // Actualizar el mensaje en pantalla
-        if (messageText != null)
-        {
-            messageText.text = $"Arma equipada: {currentWeapon.weaponName}";
+            Debug.Log($"Arma equipada: {currentWeapon.weaponName}");
         }
     }
-    else
+
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.LogError("El arma proporcionada es nula.");
-        if (messageText != null)
+        // Detectar si el objeto es un arma
+        Weapon weapon = other.GetComponent<Weapon>();
+        if (weapon != null)
         {
-            messageText.text = "No se pudo equipar el arma.";
+            weaponInRange = weapon; // Arma en rango
+            if (messageText != null)
+            {
+                messageText.text = $"Presiona E para recoger {weapon.weaponName}";
+            }
         }
     }
-}
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        // Si salimos del rango, limpiar la referencia
+        Weapon weapon = other.GetComponent<Weapon>();
+        if (weapon != null && weapon == weaponInRange)
+        {
+            weaponInRange = null;
+            if (messageText != null)
+            {
+                messageText.text = "";
+            }
+        }
+    }
 }
