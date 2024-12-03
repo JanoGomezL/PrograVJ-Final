@@ -2344,7 +2344,7 @@ MonoBehaviour:
   maxAmmo: 12
   bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   firePoint: {fileID: 1868089501}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!23 &280302457
 MeshRenderer:
@@ -12336,7 +12336,7 @@ MonoBehaviour:
   maxAmmo: 75
   bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   firePoint: {fileID: 1930359875}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!23 &1473924226
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16565,7 +16565,7 @@ MonoBehaviour:
   maxAmmo: 90
   bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   firePoint: {fileID: 2035817306}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!23 &2095327652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16971,7 +16971,7 @@ MonoBehaviour:
   maxAmmo: 30
   bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   firePoint: {fileID: 299833662}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!23 &2109199404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17171,7 +17171,7 @@ MonoBehaviour:
   maxAmmo: 10
   bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   firePoint: {fileID: 1051046221}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!114 &2112900167
 MonoBehaviour:
   m_ObjectHideFlags: 0
