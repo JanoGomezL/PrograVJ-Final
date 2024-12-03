@@ -4,55 +4,53 @@ using System.Collections.Generic;
 public class EnemyBehavior : MonoBehaviour
 {
     private BaseNode behaviorTree;
-
     private EnemyMovement movement;
     private EnemyAttack attack;
     private EnemyDetection detection;
+    private EnemyHealth health;
 
     public Transform player; // Referencia al jugador
     public Transform[] waypoints; // Puntos de patrullaje
     private int currentWaypoint = 0;
 
-    void Start()
+    private void Start()
     {
-        // Inicializa las referencias a los componentes
         movement = GetComponent<EnemyMovement>();
         attack = GetComponent<EnemyAttack>();
         detection = GetComponent<EnemyDetection>();
+        health = GetComponent<EnemyHealth>();
 
-        if (movement == null || attack == null || detection == null)
+        if (movement == null || attack == null || detection == null || health == null)
         {
-            Debug.LogError("[EnemyBehavior] Faltan referencias a Movement, Attack o Detection.");
+            Debug.LogError("[EnemyBehavior] Faltan referencias a Movement, Attack, Detection o Health.");
             return;
         }
 
-        // Define las acciones utilizando los scripts existentes
         var patrolAction = new ActionNode(() =>
         {
             movement.Patrol(waypoints, ref currentWaypoint);
-            return true; // Siempre retorna true
+            return true; // Siempre tiene éxito
         });
 
         var chaseAction = new ActionNode(() =>
         {
             movement.Chase(player);
-            return true; // Siempre retorna true
+            return true; // Siempre tiene éxito
         });
 
         var attackAction = new ActionNode(() =>
         {
             attack.PerformAttack(player);
-            return true; // Siempre retorna true
+            return true; // Siempre tiene éxito
         });
 
-        // Construcción del árbol de comportamiento
         behaviorTree = new SelectorNode(new List<BaseNode>
         {
             new SequenceNode(new List<BaseNode>
             {
                 new ActionNode(() =>
                 {
-                    return detection.IsPlayerDetected(player); // Verifica si el jugador está detectado
+                    return detection.IsPlayerDetected(player);
                 }),
                 new SelectorNode(new List<BaseNode>
                 {
@@ -60,26 +58,22 @@ public class EnemyBehavior : MonoBehaviour
                     {
                         new ActionNode(() =>
                         {
-                            return detection.IsPlayerInAttackRange(player); // Verifica si el jugador está en rango de ataque
+                            return detection.IsPlayerInAttackRange(player);
                         }),
                         attackAction
                     }),
-                    chaseAction // Persigue al jugador si no está en rango de ataque
+                    chaseAction
                 })
             }),
-            patrolAction // Patrulla si no detecta al jugador
+            patrolAction
         });
     }
 
-    void Update()
+    private void Update()
     {
-        if (behaviorTree != null)
+        if (behaviorTree != null && health.CurrentHealth > 0)
         {
-            behaviorTree.Execute(); // Ejecuta el árbol de comportamiento
-        }
-        else
-        {
-            Debug.LogError("[EnemyBehavior] El árbol de comportamiento no está inicializado.");
+            behaviorTree.Execute(); // Ejecutar si está vivo
         }
     }
 }
