@@ -12907,7 +12907,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
-  cameraTransform: {fileID: 1610733359}
+  cameraTransform: {fileID: 1399261626}
   sensitivity: 1
   weaponHoldPoint: {fileID: 521296067}
   currentWeapon: {fileID: 1849887311}
