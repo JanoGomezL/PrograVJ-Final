@@ -165,10 +165,7 @@ public class PlayerController : MonoBehaviour
             newWeapon.transform.localRotation = Quaternion.identity;
             newWeapon.transform.localScale = Vector3.one;
 
-            if (messageText != null)
-            {
-                messageText.text = $"Arma equipada: {currentWeapon.weaponName}";
-            }
+            
 
             Debug.Log($"Arma equipada: {currentWeapon.weaponName}");
         }
@@ -183,7 +180,7 @@ public class PlayerController : MonoBehaviour
             weaponInRange = weapon; // Arma en rango
             if (messageText != null)
             {
-                messageText.text = $"Presiona E para recoger {weapon.weaponName}";
+                messageText.text = $"Presiona E para recoger";
             }
         }
     }

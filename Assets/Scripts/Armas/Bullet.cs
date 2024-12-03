@@ -2,28 +2,32 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;       // Velocidad del proyectil
-    public float lifetime = 2f;    // Tiempo de vida del proyectil
+    public float speed = 20f;
+    public float lifeTime = 2f;
+    public int damage = 10;
 
     void Start()
     {
-        Destroy(gameObject, lifetime);
+        Destroy(gameObject, lifeTime); // Destruir la bala después de un tiempo
     }
 
     void Update()
     {
+        // Mover la bala hacia adelante según su orientación
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Impacto con: " + other.name);
-
-        // Aquí puedes manejar el daño si el objeto tiene vida
-        // Ejemplo:
-        // Health health = other.GetComponent<Health>();
-        // if (health != null) health.TakeDamage(damage);
-
-        Destroy(gameObject);
+        // Lógica para infligir daño si golpea un objetivo
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(gameObject); // Destruir la bala al impactar
+        }
     }
 }

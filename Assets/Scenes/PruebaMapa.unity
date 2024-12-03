@@ -1376,8 +1376,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2404,13 +2404,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  fireRate: 1
-  damage: 10
-  range: 20
   ammo: 6
   maxAmmo: 12
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1
+  range: 20
   firePoint: {fileID: 1868089501}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!23 &280302457
@@ -2890,13 +2889,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  fireRate: 0.5
-  damage: 15
-  range: 40
   ammo: 10
   maxAmmo: 30
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.5
+  range: 40
   firePoint: {fileID: 445124374}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!23 &330077537
 MeshRenderer:
@@ -8209,13 +8207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  fireRate: 0.2
-  damage: 25
-  range: 50
   ammo: 30
   maxAmmo: 90
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.2
+  range: 50
   firePoint: {fileID: 1915506636}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!65 &780430933
 BoxCollider:
@@ -8393,13 +8390,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: AK-47
-  fireRate: 0.3
-  damage: 30
-  range: 60
   ammo: 25
   maxAmmo: 75
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.3
+  range: 60
   firePoint: {fileID: 971153181}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!23 &789612359
 MeshRenderer:
@@ -8621,6 +8617,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3027209, y: 0.17087576, z: 0.16665761}
   m_Center: {x: 1.1351902, y: 2.1313066, z: 0.083328806}
+--- !u!1 &805864422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805864423}
+  m_Layer: 0
+  m_Name: Mira
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805864423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805864422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 365, y: 205.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1880703332}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &818441683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8883,13 +8911,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  fireRate: 0.5
-  damage: 15
-  range: 40
   ammo: 10
   maxAmmo: 30
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.5
+  range: 40
   firePoint: {fileID: 668219114}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!23 &834280273
 MeshRenderer:
@@ -9138,13 +9165,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  fireRate: 0.2
-  damage: 25
-  range: 50
   ammo: 30
   maxAmmo: 90
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.2
+  range: 50
   firePoint: {fileID: 372949352}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!23 &846500239
 MeshRenderer:
@@ -9620,13 +9646,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  fireRate: 1
-  damage: 10
-  range: 20
   ammo: 6
   maxAmmo: 12
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1
+  range: 20
   firePoint: {fileID: 206472213}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!23 &897879907
@@ -10313,13 +10338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  fireRate: 1.5
-  damage: 80
-  range: 100
   ammo: 5
   maxAmmo: 10
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1.5
+  range: 100
   firePoint: {fileID: 1793172345}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!114 &988735724
 MonoBehaviour:
@@ -11786,13 +11810,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  fireRate: 1
-  damage: 10
-  range: 20
   ammo: 6
   maxAmmo: 12
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1
+  range: 20
   firePoint: {fileID: 1298963883}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!65 &1150128442
@@ -12209,13 +12232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  fireRate: 0.2
-  damage: 25
-  range: 50
   ammo: 30
   maxAmmo: 90
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.2
+  range: 50
   firePoint: {fileID: 1652837514}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!23 &1205534147
 MeshRenderer:
@@ -12709,13 +12731,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  fireRate: 0.2
-  damage: 25
-  range: 50
   ammo: 30
   maxAmmo: 90
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.2
+  range: 50
   firePoint: {fileID: 1636422989}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!23 &1250456769
 MeshRenderer:
@@ -13037,13 +13058,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  fireRate: 1.5
-  damage: 80
-  range: 100
   ammo: 5
   maxAmmo: 10
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1.5
+  range: 100
   firePoint: {fileID: 617367943}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!114 &1287567806
 MonoBehaviour:
@@ -13133,7 +13153,7 @@ Transform:
   m_GameObject: {fileID: 1298963882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01685, y: 0, z: 0}
+  m_LocalPosition: {x: 0.016849995, y: -0.0000000011920929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13655,13 +13675,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  fireRate: 1.5
-  damage: 80
-  range: 100
   ammo: 5
   maxAmmo: 10
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1.5
+  range: 100
   firePoint: {fileID: 1366376780}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!65 &1323031592
 BoxCollider:
@@ -14756,13 +14775,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: AK-47
-  fireRate: 0.3
-  damage: 30
-  range: 60
   ammo: 25
   maxAmmo: 75
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.3
+  range: 60
   firePoint: {fileID: 553589172}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!23 &1460555450
 MeshRenderer:
@@ -15011,13 +15029,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: AK-47
-  fireRate: 0.3
-  damage: 30
-  range: 60
   ammo: 25
   maxAmmo: 75
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.3
+  range: 60
   firePoint: {fileID: 1930359875}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!23 &1473924226
 MeshRenderer:
@@ -15530,7 +15547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 189}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1598649297
@@ -16164,6 +16181,81 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01446696, y: 0.0057542752, z: 0.014466461}
   m_Center: {x: -0.00005844864, y: 0.0033462709, z: -0.0002394761}
+--- !u!1 &1642110302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642110303}
+  - component: {fileID: 1642110305}
+  - component: {fileID: 1642110304}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1642110303
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642110302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1880703332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1642110304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642110302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e0d6926872402bb44aba61d281b44776, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1642110305
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642110302}
+  m_CullTransparentMesh: 1
 --- !u!1 &1648385435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7271449666460269675, guid: 760b9b6ed46ddee4291e1d073086af28, type: 3}
@@ -16269,13 +16361,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: AK-47
-  fireRate: 0.3
-  damage: 30
-  range: 60
   ammo: 25
   maxAmmo: 75
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.3
+  range: 60
   firePoint: {fileID: 1883084697}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!1 &1652837513
 GameObject:
@@ -17180,13 +17271,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  fireRate: 1
-  damage: 10
-  range: 20
   ammo: 6
   maxAmmo: 12
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1
+  range: 20
   firePoint: {fileID: 890182937}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!23 &1730536090
@@ -17781,13 +17871,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  fireRate: 1
-  damage: 10
-  range: 20
   ammo: 6
   maxAmmo: 12
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1
+  range: 20
   firePoint: {fileID: 541555805}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 10c4f6d196d876c4a994338acb7c64a3, type: 3}
   pellets: 8
 --- !u!23 &1831016817
@@ -18008,13 +18097,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  fireRate: 0.5
-  damage: 15
-  range: 40
   ammo: 10
   maxAmmo: 30
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.5
+  range: 40
   firePoint: {fileID: 1805550824}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!1 &1851769853 stripped
 GameObject:
@@ -18165,6 +18253,108 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.30892625, y: 0.1980376, z: 0.0719729}
   m_Center: {x: 0.5589775, y: 3.0280986, z: 0.03598645}
+--- !u!1 &1880703331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880703332}
+  - component: {fileID: 1880703335}
+  - component: {fileID: 1880703334}
+  - component: {fileID: 1880703333}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1880703332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880703331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1642110303}
+  m_Father: {fileID: 805864423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1880703333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880703331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1880703334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880703331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1880703335
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880703331}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1883084696
 GameObject:
   m_ObjectHideFlags: 0
@@ -18435,13 +18625,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: AK-47
-  fireRate: 0.3
-  damage: 30
-  range: 60
   ammo: 25
   maxAmmo: 75
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.3
+  range: 60
   firePoint: {fileID: 1314133677}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: a72e24703b88e74488355a893d993918, type: 3}
 --- !u!23 &1907013655
 MeshRenderer:
@@ -19142,13 +19331,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  fireRate: 1.5
-  damage: 80
-  range: 100
   ammo: 5
   maxAmmo: 10
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1.5
+  range: 100
   firePoint: {fileID: 1313420969}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!114 &2016758209
 MonoBehaviour:
@@ -20410,13 +20598,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  fireRate: 0.5
-  damage: 15
-  range: 40
   ammo: 10
   maxAmmo: 30
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.5
+  range: 40
   firePoint: {fileID: 1807404320}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!23 &2060796258
 MeshRenderer:
@@ -20644,13 +20831,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  fireRate: 0.2
-  damage: 25
-  range: 50
   ammo: 30
   maxAmmo: 90
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.2
+  range: 50
   firePoint: {fileID: 2035817306}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: 1ad134cab5a67ec4c99ecda0b7eefd68, type: 3}
 --- !u!23 &2095327652
 MeshRenderer:
@@ -21050,13 +21236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  fireRate: 0.5
-  damage: 15
-  range: 40
   ammo: 10
   maxAmmo: 30
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 0.5
+  range: 40
   firePoint: {fileID: 299833662}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: f08b7e1eb47e0214a82f1fe9779c4887, type: 3}
 --- !u!23 &2109199404
 MeshRenderer:
@@ -21250,13 +21435,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  fireRate: 1.5
-  damage: 80
-  range: 100
   ammo: 5
   maxAmmo: 10
-  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
+  fireRate: 1.5
+  range: 100
   firePoint: {fileID: 1051046221}
+  bulletPrefab: {fileID: 1084054147771684357, guid: 38814652dc14efd4a9971c537285c8a1, type: 3}
   shootSound: {fileID: 8300000, guid: af2bf920005e3564e91397d5909775bf, type: 3}
 --- !u!114 &2112900167
 MonoBehaviour:
@@ -21578,3 +21762,4 @@ SceneRoots:
   - {fileID: 1169517073}
   - {fileID: 737260456}
   - {fileID: 405487587}
+  - {fileID: 805864423}
