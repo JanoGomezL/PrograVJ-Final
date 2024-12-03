@@ -38,7 +38,7 @@ public class EnemyAttack : MonoBehaviour
             return;
         }
 
-        Debug.Log("Atacando al jugador...");
+        Debug.Log($"Atacando al jugador: {target.name}");
 
         // Reproducir un sonido aleatorio de ataque
         if (attackSounds.Length > 0)
@@ -64,12 +64,12 @@ public class EnemyAttack : MonoBehaviour
 
         if (playerHealth != null)
         {
-            Debug.Log("Aplicando daño al objetivo...");
+            Debug.Log($"Aplicando {damage} puntos de daño al jugador.");
             playerHealth.TakeDamage(damage); // Aplica el daño al objetivo
         }
         else
         {
-            Debug.LogWarning("El objetivo no tiene un componente Health asignado.");
+            Debug.LogWarning($"El objetivo {target.name} no tiene un componente Health asignado.");
         }
     }
 }

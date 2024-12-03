@@ -14,31 +14,13 @@ public class Health : MonoBehaviour
     [Header("Efectos")]
     public GameObject deathEffect; // Efecto al morir
 
-    private RectTransform healthBarRect; // Referencia al RectTransform del Slider
-
     void Start()
     {
         // Inicializar la vida del personaje
         currentHealth = maxHealth;
 
-        // Configurar la posición inicial de la barra de vida
-        if (healthBar != null)
-        {
-            healthBarRect = healthBar.GetComponent<RectTransform>();
-            PositionHealthBar();
-        }
-
         // Actualizar UI inicial
         UpdateHealthUI();
-    }
-
-    void Update()
-    {
-        // Asegurar que la barra de vida siga a la cámara principal
-        if (healthBarRect != null)
-        {
-            PositionHealthBar();
-        }
     }
 
     public void TakeDamage(int damage)
@@ -56,7 +38,6 @@ public class Health : MonoBehaviour
         UpdateHealthUI();
     }
 
-
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -66,6 +47,8 @@ public class Health : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        Debug.Log($"Vida curada: {healAmount}. Vida actual: {currentHealth}");
 
         // Actualizar la UI
         UpdateHealthUI();
@@ -95,17 +78,6 @@ public class Health : MonoBehaviour
         if (healthText != null)
         {
             healthText.text = $"Vida: {currentHealth}/{maxHealth}";
-        }
-    }
-
-    private void PositionHealthBar()
-    {
-        // Posicionar la barra de vida en la parte inferior de la cámara
-        Camera mainCamera = Camera.main;
-        if (mainCamera != null)
-        {
-            Vector3 bottomPosition = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.1f, mainCamera.nearClipPlane + 1));
-            healthBarRect.position = mainCamera.WorldToScreenPoint(bottomPosition);
         }
     }
 }

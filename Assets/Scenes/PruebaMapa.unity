@@ -3934,7 +3934,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -13233,8 +13233,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7086d173584d0ad48965081989c0e351, type: 3}
   - {fileID: 8300000, guid: d0d9674a01761a84da50fdb6ab1356bd, type: 3}
   - {fileID: 8300000, guid: cf2ea0c8e1d2579428bd68ff3998b8c4, type: 3}
-  damage: 10
-  player: {fileID: 0}
+  damage: 100
+  player: {fileID: 1610733355}
 --- !u!114 &1301198841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13247,7 +13247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc37852af84441129f3684c29f25e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1570111276}
+  player: {fileID: 1610733359}
   waypoints:
   - {fileID: 1630817766}
 --- !u!65 &1301735700
@@ -15443,11 +15443,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1570111276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
-  m_PrefabInstance: {fileID: 296183053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586626386
 GameObject:
   m_ObjectHideFlags: 0
