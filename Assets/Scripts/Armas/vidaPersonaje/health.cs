@@ -1,45 +1,62 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class health : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [Header("Configuración de la Vida")]
     public int maxHealth = 100; // Vida máxima del personaje
     private int currentHealth;  // Vida actual del personaje
 
     [Header("Interfaz de Usuario")]
-    public Slider healthBar;    // Barra de vida (opcional)
+    public Slider healthBar;    // Barra de vida
     public Text healthText;     // Texto de vida (opcional)
 
     [Header("Efectos")]
     public GameObject deathEffect; // Efecto al morir
+
+    private RectTransform healthBarRect; // Referencia al RectTransform del Slider
 
     void Start()
     {
         // Inicializar la vida del personaje
         currentHealth = maxHealth;
 
+        // Configurar la posición inicial de la barra de vida
+        if (healthBar != null)
+        {
+            healthBarRect = healthBar.GetComponent<RectTransform>();
+            PositionHealthBar();
+        }
+
         // Actualizar UI inicial
         UpdateHealthUI();
     }
 
-    
+    void Update()
+    {
+        // Asegurar que la barra de vida siga a la cámara principal
+        if (healthBarRect != null)
+        {
+            PositionHealthBar();
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        // Verificar si la vida está por debajo de 0
+        Debug.Log($"Daño recibido: {damage}. Vida restante: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Die();
         }
 
-        // Actualizar la UI
         UpdateHealthUI();
     }
 
-  
+
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -54,7 +71,6 @@ public class health : MonoBehaviour
         UpdateHealthUI();
     }
 
-   
     private void Die()
     {
         Debug.Log("El personaje ha muerto.");
@@ -79,6 +95,17 @@ public class health : MonoBehaviour
         if (healthText != null)
         {
             healthText.text = $"Vida: {currentHealth}/{maxHealth}";
+        }
+    }
+
+    private void PositionHealthBar()
+    {
+        // Posicionar la barra de vida en la parte inferior de la cámara
+        Camera mainCamera = Camera.main;
+        if (mainCamera != null)
+        {
+            Vector3 bottomPosition = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.1f, mainCamera.nearClipPlane + 1));
+            healthBarRect.position = mainCamera.WorldToScreenPoint(bottomPosition);
         }
     }
 }
