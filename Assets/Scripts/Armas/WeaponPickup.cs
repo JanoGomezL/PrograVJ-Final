@@ -3,20 +3,17 @@ using TMPro;
 
 public class WeaponPickup : MonoBehaviour
 {
-    public TextMeshProUGUI messageText; // Referencia al texto TMP
-    public Transform weaponHoldPoint; // Punto en la Main Camera donde se sujetará el arma
+    public TextMeshProUGUI messageText; // Mensaje en pantalla
     private bool isPlayerInRange = false;
 
     void Start()
     {
-        // Asegúrate de que el mensaje esté vacío al inicio
         if (messageText != null)
         {
-            messageText.text = "";
+            messageText.text = ""; // Asegurar que el mensaje esté vacío al inicio
         }
     }
 
-    // Detectar cuando el jugador entra en el trigger
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -24,12 +21,11 @@ public class WeaponPickup : MonoBehaviour
             isPlayerInRange = true;
             if (messageText != null)
             {
-                messageText.text = "Presiona 'E'";
+                messageText.text = "Presiona E para recoger el arma";
             }
         }
     }
 
-    // Detectar cuando el jugador sale del trigger
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -42,43 +38,51 @@ public class WeaponPickup : MonoBehaviour
         }
     }
 
-    // Detectar interacción (tecla "E") mientras el jugador está en rango
     void Update()
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Jugador recogió el arma");
-            if (messageText != null)
-            {
-                messageText.text = "";
-            }
-
-            // Mover el arma al punto de sujeción
             AttachWeaponToPlayer();
         }
     }
 
-    // Método para mover el arma a la Main Camera
     private void AttachWeaponToPlayer()
+{
+    PlayerController player = FindObjectOfType<PlayerController>();
+    if (player != null)
     {
-        if (weaponHoldPoint != null)
+        Weapon newWeapon = GetComponent<Weapon>();
+        if (newWeapon != null)
         {
+            player.EquipWeapon(newWeapon);
+            messageText.text = "";
             // Desactiva la física del arma
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
+
             }
 
-            // Ajustar la posición y rotación del arma al punto de sujeción
-            transform.SetParent(weaponHoldPoint);
-            transform.localPosition = Vector3.zero; // Centra el arma en el punto de sujeción
-            transform.localRotation = Quaternion.identity; // Resetea la rotación
-            Debug.Log("Arma equipada");
+            // Desactivar el collider del arma
+            Collider weaponCollider = GetComponent<Collider>();
+            if (weaponCollider != null)
+            {
+
+                weaponCollider.enabled = false;
+            }
+
+            Debug.Log("Arma recogida y equipada: " + newWeapon.weaponName);
         }
         else
         {
-            Debug.LogError("Weapon Hold Point no está asignado.");
+            Debug.LogError("No se encontró un script Weapon en el objeto.");
         }
     }
+    else
+    {
+        Debug.LogError("PlayerController no encontrado en la escena.");
+    }
+}
+
 }
