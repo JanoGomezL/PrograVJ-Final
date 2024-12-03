@@ -77,11 +77,23 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f; // Reseteamos la velocidad vertical al estar en el suelo
         }
 
-        // Movimiento horizontal
+        // Movimiento horizontal basado en la dirección de la cámara
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        // Calcula la dirección de movimiento relativa a la cámara
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        // Asegúrate de que las direcciones no tengan componente vertical
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        // Calcular el movimiento basado en la entrada del jugador
+        Vector3 move = forward * z + right * x;
 
         // Cambiar velocidad si presionamos Shift
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
@@ -98,6 +110,7 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
 
     private void RotateCamera()
     {
